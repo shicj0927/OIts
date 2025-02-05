@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html style="height=100%;margin:0;padding:0;">
+    <head>
+        <meta charset="utf-8">
+        <title>OI模板合集</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/default.min.css">
+        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <style>
+            html, body {
+                height: 100%; /* 设置html和body的高度为100% */
+                margin: 0; /* 移除默认的margin */
+                padding: 0; /* 移除默认的padding */
+            }
+            h1{
+                margin: 0; /* 移除默认的margin */
+                padding: 0; /* 移除默认的padding */
+            }
+            .full-page-div {
+                height: 100%; /* 设置div的高度为100% */
+                width: 100%; /* 设置div的宽度为100% */
+                padding:10px;
+            }
+            code {
+                font-family: 'Courier New', Courier, monospace;
+                background-color: #f4f4f4;
+                padding: 10px;
+                border: 1px solid #ddd;
+                display: block;
+                overflow-x: auto; /* 当代码过长时，自动添加滚动条 */
+            }
+        </style>
+    </head>
+    <body style="height=100%;margin:0;padding:0;">
+        <div class="full-page-div" id="menu" style="background-color:#fff;">
+            <h1>5.数学-矩阵（附带快速幂）</h1>
+            <hr>
+            <p>注意：按需设置数组大小！</p>
+            <pre><code class="cpp">class Matrix {
+        int dat[101][101];
+        int size;
+    public:
+        Matrix(int size_=0) {
+            memset(dat,0,sizeof(dat));
+            size=size_;
+        }
+        void set_init(){
+            for(int i=1;i<=size;i++)
+                dat[i][i]=1;
+        }
+        void set(int x,int y,int v) {
+            dat[x][y]=v;
+        }
+        int get(int x,int y) {
+            return dat[x][y]%MOD;
+        }
+        friend Matrix operator * (Matrix &a_,Matrix &b_){
+            Matrix ans_(a_.size);
+            for(int i=1; i<=a_.size; i++) {
+                for(int j=1; j<=a_.size; j++) {
+                    for(int k=1; k<=a_.size; k++) {
+                        ans_.dat[i][j]+=a_.dat[i][k]*b_.dat[k][j]%MOD;
+                        ans_.dat[i][j]%=MOD;
+                    }
+                }
+            }
+            return ans_;
+        }
+        friend Matrix operator ^ (Matrix n_,int k_){
+            if(k_==1)return n_;
+            Matrix ans_(n_.size);
+            ans_.set_init();
+            while(k_) {
+                if(k_&1)
+                    ans_=ans_*n_;
+                n_=n_*n_;
+                k_>>=1;
+            }
+            return ans_;
+        }
+};</code></pre>
+            <p>乘法时间复杂度：<b>O(n^3)</b></p>
+            <p>次方时间复杂度：<b>O(n^3logk)</b></p>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> <!-- 初始化高亮 -->
+    </body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html style="height=100%;margin:0;padding:0;">
+    <head>
+        <meta charset="utf-8">
+        <title>OI模板合集</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            html, body {
+                height: 100%; /* 设置html和body的高度为100% */
+                margin: 0; /* 移除默认的margin */
+                padding: 0; /* 移除默认的padding */
+            }
+            h1{
+                margin: 0; /* 移除默认的margin */
+                padding: 0; /* 移除默认的padding */
+            }
+            .full-header {
+                height: 10%; /* 设置div的高度为100% */
+                width: 100%; /* 设置div的宽度为100% */
+            }
+            .full-page-div {
+                height: 80%; /* 设置div的高度为100% */
+                width: 100%; /* 设置div的宽度为100% */
+            }
+            .full-page-footer {
+                height: 10%; /* 设置div的高度为100% */
+                width: 100%; /* 设置div的宽度为100% */
+                position: absolute;
+                bottom: 0; /* 固定在底部 */
+                width: 100%; /* 宽度占满容器 */
+            }
+            .list-e{
+                color: #fff;
+                padding-left: 10px;
+            }
+        </style>
+    </head>
+    <body style="height=100%;margin:0;padding:0;">
+        <div class="full-header" id="header" style="background-color:#1772b4;height=80%">
+            <h1 style="color:#fff">OI模板合集</h1>
+        </div>
+        <div class="full-page-div" id="menu" style="background-color:#7e2065;width:20%;float:left;overflow:auto;">
+            <p class="list-e"><i>选择一个模板开始</i></p>
+            <a class="list-e" href="#" onclick="getElementById('show-data').src='pages/math-gcd.html'">1.数学-GCD</a><br>
+            <a class="list-e" href="#" onclick="getElementById('show-data').src='pages/math-qpow.html'">2.数学-快速幂</a><br>
+            <a class="list-e" href="#" onclick="getElementById('show-data').src='pages/math-inv.html'">3.数学-逆元（数组）</a><br>
+            <a class="list-e" href="#" onclick="getElementById('show-data').src='pages/math-c.html'">4.数学-组合数（C）</a><br>
+            <a class="list-e" href="#" onclick="getElementById('show-data').src='pages/math-mat.html'">5.数学-矩阵（附带快速幂）</a><br>
+            <a class="list-e" href="#" onclick="getElementById('show-data').src='pages/math-prime1.html'">6.数学-线性筛求素数</a><br>
+            <a class="list-e" href="#" onclick="getElementById('show-data').src='pages/math-exgcd.html'">7.数学-ExGCD</a><br>
+            <a class="list-e" href="#" onclick="getElementById('show-data').src='pages/math-crt.html'">8.数学-中国剩余定理（CRT）</a><br>
+            <a class="list-e" href="#" onclick="getElementById('show-data').src='pages/math-excrt.html'">9.数学-扩展中国剩余定理（ExCRT）</a><br>
+            <a class="list-e" href="#" onclick="getElementById('show-data').src='pages/math-simp.html'">10.数学-自适应辛普森法</a><br>
+            <a class="list-e" href="#" onclick="getElementById('show-data').src='pages/math-nim.html'">11.数学-Nim博弈</a><br>
+            <a class="list-e" href="#" onclick="getElementById('show-data').src='pages/graph-lcast.html'">12.图论-LCA（ST表）</a><br>
+            <a class="list-e" href="#" onclick="getElementById('show-data').src='pages/graph-lcatar.html'">13.图论-LCA（Tarjan）</a><br>
+            <a class="list-e" href="#" onclick="getElementById('show-data').src='pages/graph-mst.html'">14.图论-最小生成树</a><br>
+            <a class="list-e" href="#" onclick="getElementById('show-data').src='pages/graph-dijkstra.html'">15.图论-Dijkstra</a><br>
+            <a class="list-e" href="#" onclick="getElementById('show-data').src='pages/graph-spfa.html'">16.图论-SPFA（判负环）</a><br>
+            <a class="list-e" href="#" onclick="getElementById('show-data').src='pages/graph-tp.html'">17.图论-拓扑排序</a><br>
+            <a class="list-e" href="#" onclick="getElementById('show-data').src='pages/graph-tarjan1.html'">18.图论-强连通分量</a><br>
+            <a class="list-e" href="#" onclick="getElementById('show-data').src='pages/graph-tarjan2.html'">19.图论-点双连通分量</a><br>
+            <a class="list-e" href="#" onclick="getElementById('show-data').src='pages/graph-tarjan3.html'">20.图论-边双连通分量</a><br>
+            <a class="list-e" href="#" onclick="getElementById('show-data').src='pages/graph-tarjan4.html'">21.图论-割点</a><br>
+            <a class="list-e" href="#" onclick="getElementById('show-data').src='pages/graph-flowed.html'">22.图论-网络流加边</a><br>
+            <a class="list-e" href="#" onclick="getElementById('show-data').src='pages/graph-ek.html'">23.图论-EK网络流</a><br>
+            <a class="list-e" href="#" onclick="getElementById('show-data').src='pages/graph-dinic.html'">24.图论-Dinic网络流</a><br>
+            <a class="list-e" href="#" onclick="getElementById('show-data').src='pages/graph-sdc.html'">25.图论-差分约束</a><br>
+            <a class="list-e" href="#" onclick="getElementById('show-data').src='pages/string-kmp.html'">26.字符串-KMP</a><br>
+            <a class="list-e" href="#" onclick="getElementById('show-data').src='pages/string-trie.html'">27.字符串-Trie字典树</a><br>
+            <a class="list-e" href="#" onclick="getElementById('show-data').src='pages/string-hash.html'">28.字符串-哈希</a><br>
+            <a class="list-e" href="#" onclick="getElementById('show-data').src='pages/string-manacher.html'">29.字符串-Manacher</a><br>
+            <a class="list-e" href="#" onclick="getElementById('show-data').src='pages/dp-lca.html'">30.动态规划-最长公共子序列LCA</a><br>
+            <a class="list-e" href="#" onclick="getElementById('show-data').src='pages/ds-mqs.html'">31.数据结构-并查集</a><br>
+            <a class="list-e" href="#" onclick="getElementById('show-data').src='pages/ds-segtree.html'">32.数据结构-线段树</a><br>
+            <a class="list-e" href="#" onclick="getElementById('show-data').src='pages/ds-psegtree.html'">33.数据结构-可持久化线段树（单点）</a><br>
+            <a class="list-e" href="#" onclick="getElementById('show-data').src='pages/ds-bit.html'">34.数据结构-树状数组</a><br>
+            <a class="list-e" href="#" onclick="getElementById('show-data').src='pages/ds-sl.html'">35.数据结构-扫描线</a><br>
+            <a class="list-e" href="#" onclick="getElementById('show-data').src='pages/cg-tb2.html'">36.计算几何-二维凸包</a><br>
+        </div>
+        <div class="full-page-div" id="main" style="background-color:#fff;width:80%;float:right;">
+            <iframe id="show-data" src="pages/default.html" width="100%" height="100%"></iframe>
+        </div>
+        <div class="full-page-footer" id="footer" style="background-color:#1772b4;text-align:center;float=bottom;">
+            <p style="color:#fff">By shicj</p>
+        </div>
+    </body>
+</html>
+
+
+<!---     todo                                                   --->
+<!---  1.解决iframe溢出问题                                                   --->
+<!---  2.解决时间复杂度公式加载失败问题                                                   --->
+<!---  3.设计更好的配色                                                   --->

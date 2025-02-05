@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html style="height=100%;margin:0;padding:0;">
+    <head>
+        <meta charset="utf-8">
+        <title>OI模板合集</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/default.min.css">
+        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <style>
+            html, body {
+                height: 100%; /* 设置html和body的高度为100% */
+                margin: 0; /* 移除默认的margin */
+                padding: 0; /* 移除默认的padding */
+            }
+            h1{
+                margin: 0; /* 移除默认的margin */
+                padding: 0; /* 移除默认的padding */
+            }
+            .full-page-div {
+                height: 100%; /* 设置div的高度为100% */
+                width: 100%; /* 设置div的宽度为100% */
+                padding:10px;
+            }
+            code {
+                font-family: 'Courier New', Courier, monospace;
+                background-color: #f4f4f4;
+                padding: 10px;
+                border: 1px solid #ddd;
+                display: block;
+                overflow-x: auto; /* 当代码过长时，自动添加滚动条 */
+            }
+        </style>
+    </head>
+    <body style="height=100%;margin:0;padding:0;">
+        <div class="full-page-div" id="menu" style="background-color:#fff;">
+            <h1>2.数学-快速幂</h1>
+            <hr>
+            <p>本质上利用分治思想，结合二进制加快运算速度，通常用于求解模质数意义下的乘法逆元。</p>
+            <pre><code class="cpp">int qpow(int a,int b,int mod) {
+    int tmp=a,ans=1;
+    while(b){
+        if(b&1){
+            ans=ans*tmp%mod;
+        }
+        b>>=1;
+        tmp=tmp*tmp%mod;
+    }
+    return ans;
+}</code></pre>
+            <p>时间复杂度：<b>O(logn)</b></p>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> <!-- 初始化高亮 -->
+    </body>
+</html>
